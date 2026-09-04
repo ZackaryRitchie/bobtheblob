@@ -1,5 +1,4 @@
-﻿
-using LaVieDeBob;
+﻿using LaVieDeBob.model;
 
 
 

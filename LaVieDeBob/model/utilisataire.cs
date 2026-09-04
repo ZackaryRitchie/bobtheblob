@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LaVieDeBob;
+namespace LaVieDeBob.model;
 
 public static class Utilisataire
 {
