@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LaVieDeBob
+namespace LaVieDeBob.model
 {
     public class Compte
     {

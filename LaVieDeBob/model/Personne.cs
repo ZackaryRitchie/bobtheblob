@@ -25,16 +25,6 @@ namespace LaVieDeBob
 
 		}
 
-		public Personne(string prenom,string nom, object[] animaux, string adresse, int age)
-		{
-			Prenom= prenom;
-			Nom = nom;
-			Animaux=animaux;
-			Emploi = "aucune";
-			Adresse = adresse;
-			Age=age;
-		}
-
 		public Personne(string prenom, string nom, object[] animaux,string emploi, object adresse,int age) 
 		{
             Prenom = prenom;
@@ -47,10 +37,12 @@ namespace LaVieDeBob
 		}
 
 
-		public void tempsavence(int annee)
+		public void tempsavence(int annee=1)
 		{
-			Age = Age + annee;
+			Age +=  annee;
 		}
+
+
 
         public override string ToString()
         {
