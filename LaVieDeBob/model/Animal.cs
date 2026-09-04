@@ -17,11 +17,7 @@ namespace LaVieDeBob.model
     
         protected Animal() 
         {
-            Nom=string.Empty;
-            Type = string.Empty;
             Faim = false;
-            Cout= 0;
-            TempsEntreSouper = TimeSpan.Zero;
             DernierSouper = DateTime.Now;
 
 
