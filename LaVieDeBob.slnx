@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="LaVieDeBob/LaVieDeBob.csproj" />
+  <Project Path="LaVieDeBobTests/LaVieDeBobTests.csproj" Id="9359ffbc-6770-44e6-bdfc-a8d3453c83cd" />
 </Solution>

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LaVieDeBob.model;
+using System;
 using System.Runtime.InteropServices.ObjectiveC;
+using System.Text.RegularExpressions;
 
 
 namespace LaVieDeBob
@@ -7,12 +9,73 @@ namespace LaVieDeBob
 
 	public class Personne
 	{
-		public string Prenom {  get; set; }
-		public string Nom {  get; set; }
-		public object[] Animaux { get; set; }
-		public string Emploi { get; set; }
-		public object Adresse { get; set; }
-		public int Age { get; set; }
+		
+		public Animal[] Animaux { get; set; }
+		public string Adresse { get; set; }
+
+		private string prenom;
+
+		public string Prenom
+		{
+			get { return prenom; }
+			set { 
+				if (string.IsNullOrEmpty(value) )
+				{
+					throw new ArgumentException("Le Prénom doit être un string");
+				}
+				prenom = value; 
+			}
+		}
+
+
+        private string nom;
+
+        public string Nom
+        {
+            get { return nom; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Le nom doit être un string");
+                }
+                nom = value;
+            }
+        }
+
+
+        private string emploi;
+
+        public string Emploi
+        {
+            get { return emploi; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("L'emploi doit être un string");
+                }
+                emploi = value;
+            }
+        }
+
+		private int age;
+
+		public int Age
+		{
+			get { return age; }
+			set { 
+				if (value <= 0)
+				{
+					throw new ArgumentOutOfRangeException(nameof(age), age, "L'age doit être positif");
+                }
+				age = value; 
+			}
+		}
+
+
+
+
 
 		public Personne()
 		{
@@ -25,7 +88,7 @@ namespace LaVieDeBob
 
 		}
 
-		public Personne(string prenom, string nom, object[] animaux,string emploi, object adresse,int age) 
+		public Personne(string prenom, string nom, Animal[] animaux,string emploi, string adresse,int age) 
 		{
             Prenom = prenom;
             Nom = nom; 
@@ -37,18 +100,31 @@ namespace LaVieDeBob
 		}
 
 
-		public void tempsavence(int annee=1)
+		public Personne(string prenom,int age)
 		{
-			Age +=  annee;
+			Prenom=prenom;
+			Age = age;
 		}
 
 
+		public void Tempsavence(int annee=1)
+		{
+			if (annee <= 0)
+			{
+				throw new ArgumentOutOfRangeException(nameof(annee), annee, "L'année doit être positif");
+			}
+            Age += annee;
 
-        public override string ToString()
-        {
-            return $"nom:{Prenom} {Nom}, Age: {Age} ans, Adresse: {Adresse}, Emploi: {Emploi}, Animaux de compagnie: {Animaux}";
         }
+
+
+
+        //public override string ToString()
+        //{
+        //    return $"nom:{Prenom} {Nom}, Age: {Age} ans, Adresse: {Adresse}, Emploi: {Emploi}, Animaux de compagnie: {Animaux}";
+        //}
 	}
 }
 
 
+// || Regex.IsMatch(value, @"^[A-Za-z]\d[A-Za-z] ?\d[A-Za-z]$")
