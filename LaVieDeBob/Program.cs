@@ -1,12 +1,21 @@
 ﻿using LaVieDeBob;
 using LaVieDeBob.model;
 
-Personne p1 =new Personne();
+Chien roboto = new Chien("Roboto","Golden retriver",false, DateTime.Now);
+Chat mitaine = new Chat("Mitaine","Persian",false, DateTime.Now);
+Adresse bobAd = new Adresse("rue la fontaine", 54);
 
 
+Personne p1 = new PersonneBuilder()
+    .ajoutPreNom("BoB")
+    .ajoutNom("The Blob")
+    .ajoutAnimal([roboto,mitaine])
+    .ajoutEmploi("Programmeur")
+    .ajoutAdresse(bobAd)
 
+    .Build();
 
-
+DateTime temps = DateTime.Now;
 string choix;
 
 do
@@ -32,7 +41,7 @@ do
             Console.WriteLine("WAZZAAAAAA");
             break;
         case "2":
-
+            
             break;
     }
 
