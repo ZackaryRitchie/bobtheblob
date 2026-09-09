@@ -11,7 +11,7 @@ namespace LaVieDeBob
 	{
 		
 		public Animal[] Animaux { get; set; }
-		public string Adresse { get; set; }
+		public Adresse Adresses { get; set; }
 
 		private string prenom;
 
@@ -83,18 +83,18 @@ namespace LaVieDeBob
 			Nom = "";
 			Animaux = [];
 			Emploi = "aucun";
-			Adresse = "";
+			Adresses =new Adresse("a",1);
 			Age = 0;
 
 		}
 
-		public Personne(string prenom, string nom, Animal[] animaux,string emploi, string adresse,int age) 
+		public Personne(string prenom, string nom, Animal[] animaux,string emploi, Adresse adresse,int age) 
 		{
             Prenom = prenom;
             Nom = nom; 
 			Animaux=animaux;
 			Emploi = emploi;
-			Adresse=adresse;
+			Adresses=adresse;
 			Age=age;
 
 		}
@@ -119,10 +119,10 @@ namespace LaVieDeBob
 
 
 
-        //public override string ToString()
-        //{
-        //    return $"nom:{Prenom} {Nom}, Age: {Age} ans, Adresse: {Adresse}, Emploi: {Emploi}, Animaux de compagnie: {Animaux}";
-        //}
+        public override string ToString()
+        {
+            return $"nom:{Prenom} {Nom}, Age: {Age} ans, Adresse: {Adresses}, Emploi: {Emploi}, Animaux de compagnie: {Animaux}";
+        }
 	}
 }
 
