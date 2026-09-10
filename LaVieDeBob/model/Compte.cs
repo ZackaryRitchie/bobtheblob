@@ -8,7 +8,7 @@ namespace LaVieDeBob.model
     {
         public string Prenom { get; set; }
         public string Nom { get; set; }
-        public int Solde { get; set; }
+        public double Solde { get; set; }
     
         
         public Compte() 
@@ -27,7 +27,7 @@ namespace LaVieDeBob.model
         }
 
 
-        public void AjouteArgent(int nbargent)
+        public void AjouteArgent(double nbargent)
         {
             Solde += nbargent;
         }
@@ -37,7 +37,7 @@ namespace LaVieDeBob.model
             Solde -= nbargent;
         }
 
-        public int Consulter()
+        public double Consulter()
         {  return Solde; }
         
  

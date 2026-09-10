@@ -9,7 +9,7 @@ namespace LaVieDeBob.model
         public string Prenom { get; set; }
         public string Nom { get; set; }
         public string Carriere { get; set; }
-        public int Salaire { get; set; }
+        public double Salaire { get; set; }
 
 
         public Emploi() 
@@ -20,7 +20,7 @@ namespace LaVieDeBob.model
             Salaire=0;    
         }
 
-        public Emploi(string prenom, string nom, string carriere, int salaire)
+        public Emploi(string prenom, string nom, string carriere, double salaire)
         {
             Prenom = prenom;
             Nom = nom;
@@ -29,7 +29,7 @@ namespace LaVieDeBob.model
         }
 
 
-        public int Paie(int NbHeureTravailler=1)
+        public double Paie(double NbHeureTravailler=1)
         {
             return Salaire* NbHeureTravailler;
         }

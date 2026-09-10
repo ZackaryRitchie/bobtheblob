@@ -51,11 +51,14 @@ namespace LaVieDeBob
             get { return emploi; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("L'emploi doit être un string");
-                }
+				if (string.IsNullOrEmpty(value))
+				{
+					emploi = "aucune";
+				}
+				else 
+				{ 
                 emploi = value;
+                }
             }
         }
 
@@ -64,12 +67,19 @@ namespace LaVieDeBob
 		public int Age
 		{
 			get { return age; }
-			set { 
-				if (value <= 0)
+			set {
+				if (value < 0)
 				{
 					throw new ArgumentOutOfRangeException(nameof(age), age, "L'age doit être positif");
-                }
-				age = value; 
+				}
+				else if (value is int)
+				{
+					age = value;
+				}
+				else
+				{
+					age = 0;
+				}
 			}
 		}
 

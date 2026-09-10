@@ -10,40 +10,46 @@ namespace LaVieDeBob.model
 {
     public class PersonneBuilder
     {
-        private Personne p1= new Personne();
+        private string Prenom;
+        private string Nom;
+        private int Age;
+        private Animal[] Animaux;
+        private Adresse Adresses;
+        private string Emploi;
+
         public PersonneBuilder ajoutPreNom(string prenom)
         {
-            p1.Prenom= prenom ;
+            Prenom= prenom ;
             return this;
         }
 
         public PersonneBuilder ajoutNom(string nom)
         {
-            p1.Nom = nom;
+            Nom = nom;
             return this;
         }
 
         public PersonneBuilder ajoutAnimal(Animal[] animaux)
         {
-            p1.Animaux = animaux;
+            Animaux = animaux;
             return this;
         }
 
         public PersonneBuilder ajoutEmploi(string emploi)
         {
-            p1.Emploi = emploi;
+            Emploi = emploi;
             return this;
         }
 
         public PersonneBuilder ajoutAdresse(Adresse adresse)
         {
-            p1.Adresses = adresse;
+            Adresses = adresse;
             return this;
         }
 
         public PersonneBuilder ajoutAge(int age)
         {
-            p1.Age = age;
+            Age = age;
             return this;
         }
 
@@ -51,7 +57,7 @@ namespace LaVieDeBob.model
 
         public virtual Personne Build() 
         {
-            return p1;
+            return new Personne(Prenom,Nom,Animaux,Emploi,Adresses,Age);
         }
     }
 }

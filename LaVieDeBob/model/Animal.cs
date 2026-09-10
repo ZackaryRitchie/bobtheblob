@@ -30,12 +30,17 @@ namespace LaVieDeBob.model
             Random random= new Random();
             int randome=random.Next(1,2);
 
-            if (randome==1 & (DernierSouper-DateTime.Now)< TempsEntreSouper)
+            if (randome==1 & (DernierSouper-DateTime.Now)<=TempsEntreSouper)
             {
-                return $"{Nom} a faim";
+                string message = $"{Nom} a faim";
+                return message;
 
+            }else
+            {
+                string message = $"{Nom} n'a pas faim";
+                return message ;
             }
-            return $"{Nom} n'a pas faim";
+            
         } 
 
 
